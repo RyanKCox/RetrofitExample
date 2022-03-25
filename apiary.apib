@@ -1,0 +1,263 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# Toy Exchange
+
+API that grabs all the posted toys
+
+## AllToys [/alltoys]
+
+### Retrieve all Toys [POST]
+
+retrieve the toys from the server
+
++ Request (application/json)
+
+        {
+            "Toys": "all"
+           
+        }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "toys":
+                [
+                    {
+                        "toyid":0,
+                        "name":"Nerf Gun",
+                        "description":"Toy gun that shoots foam darts",
+                        "img":"nerfgun.jpg",
+                        "posterid":0
+                        },
+                    {
+                        "toyid":1,
+                        "name":"Bat",
+                        "description":"Steel baseball bat",
+                        "img":"baseballbat.jpg",
+                        "posterid":1
+                    },
+                    {
+                        "toyid":2,
+                        "name":"Barbie",
+                        "description":"Malibu Barbie doll",
+                        "img":"barbie.jpg",
+                        "posterid":2
+                    },
+                    {
+                        "toyid":3,
+                        "name":"Frisbie",
+                        "description":"Yellow plastic frisbie",
+                        "img":"frisbie.jpg",
+                        "posterid":3
+                    }
+                ]
+            }
+          
+## UserToys [/usertoys]
+
+API that grabs the posted toys from a specific user
+
+### Retrieve User Posted Items [POST]
+
+retrieve all posted items from the user
+
++ Request (application/json)
+
+            {
+                "posterid":0
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "toys":
+                    {
+                        "toyid":0,
+                        "name":"Nerf Gun",
+                        "description":"Toy gun that shoots foam darts",
+                        "img":"nerfgun.jpg",
+                        "posterid":0
+                    }
+            }
+            
+## ViewToy [/viewtoy]
+
+API that grabs a single toy
+
+### Retrieve a Toy [Post]
+
+Retrieves a toy by the passed in toy id
+
++ Request (application/json)
+
+            {
+                "toyid":1
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "toys":
+                    {
+                        "toyid":1,
+                        "name":"Bat",
+                        "description":"Steel baseball bat",
+                        "img":"baseballbat.jpg",
+                        "posterid":1
+                    }
+            }
+            
+## Login auth [/login]
+
+authenticate user login
+
+### retrieve login authintication [GET]
+
+Retrieves a toy by the passed in toy id
+
++ Request (application/json)
+
+            {
+                "username":"user"
+                "password":"pass"
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "success_msg": "Login Successful",
+                "auth_token": "2015-08-05T08:40:51.620Z"
+            }
+            
+## Post new Toy [/posttoy]
+
+Post a new toy to the server
+
+### send new Toy [POST]
+
+Send a passed toy to the server
+
++ Request (application/json)
+
+            {
+                "toyid":6,
+                "name":"Truck",
+                "description":"Small truck toy",
+                "img":"truck.jpg",
+                "posterid":4
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "success_msg": "Toy added"
+            }
+            
+## Trade offer [/tradeoffer]
+
+Retrieve list of user's toys and the target toy of trade
+
+### offer toy for trade [POST]
+
+Get a list of user's toys and a target toy for trade setup
+
++ Request (application/json)
+
+            {
+                "toyid":6,
+                "posterid":3
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "toys":
+                    {
+                        "toyid":1,
+                        "name":"Bat",
+                        "description":"Steel baseball bat",
+                        "img":"baseballbat.jpg",
+                        "posterid":1
+                    },
+                "postertoys":[
+                            {
+                                "toyid":2,
+                                "name":"Barbie",
+                                "description":"Malibu Barbie doll",
+                                "img":"barbie.jpg",
+                                "posterid":3
+                            },
+                            {
+                                "toyid":3,
+                                "name":"Frisbie",
+                                "description":"Yellow plastic frisbie",
+                                "img":"frisbie.jpg",
+                                "posterid":3
+                            }
+                    ]
+                    
+            }
+            
+## Send Trade offer [/sendtrade]
+
+Send trade offer to user
+
+### send offer to trade [POST]
+
+send the trade offer 
+
++ Request (application/json)
+
+            {
+                "tradeoffer":[
+                            "offerid":1,
+                            "targettoyid":1,
+                            "offertoyid":3,
+                            "msg":"Would you like to trade for this?"
+                ]
+            }
+
++ Response 201 (application/json)
+
+                {
+                    "success_msg":"toy offer sent"
+                }
+                
+## Accept offer [/offeraccepted]
+
+Accept the trade offer
+
+### send offer accepted [POST]
+
+accept the passed trade offer 
+
++ Request (application/json)
+
+            {
+                "accepttrade":1
+            }
+
++ Response 201 (application/json)
+
+                {
+                    "success_msg":"Offer has been accepted"
+                }
