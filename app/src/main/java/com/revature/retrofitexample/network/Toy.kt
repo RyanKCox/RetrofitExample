@@ -4,13 +4,13 @@ import com.google.gson.annotations.SerializedName
 
 data class Toy(
 
-    @SerializedName("id")
+    @SerializedName("toyid")
     val id:Int,
-    @SerializedName("sName")
+    @SerializedName("name")
     val sName:String,
-    @SerializedName("sDescription")
+    @SerializedName("description")
     val sDescription:String,
     @SerializedName("posterId")
     val posterId:Int,
-    @SerializedName("sImagePath")
+    @SerializedName("img")
     val sImagePath:String)

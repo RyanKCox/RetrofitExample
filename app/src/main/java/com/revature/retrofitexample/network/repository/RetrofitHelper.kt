@@ -31,7 +31,7 @@ object RetrofitHelper {
         retrofit = builder.client(okHttpClient).build()
     }
 
-    fun getToys():ToysApiService{
+    fun getToysService():ToysApiService{
         return retrofit.create(ToysApiService::class.java)
     }
 }

@@ -2,7 +2,7 @@ package com.revature.retrofitexample.network
 
 import com.google.gson.annotations.SerializedName
 
-data class RetrieveToys(
+data class RequestToys(
 
     @SerializedName("sToyTable")
     val sToyTable:String,
