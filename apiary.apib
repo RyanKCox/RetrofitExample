@@ -261,3 +261,95 @@ accept the passed trade offer
                 {
                     "success_msg":"Offer has been accepted"
                 }
+
+## Profile [/profile]
+
+### Profile Information [POST]
+
+View a user's Profile Information
+
++ Request (application/json)
+
+        {
+            "user_id": "1"
+        }
+
++ Response 200 (application/json)
+
+            {
+                "profile_picture": "profile picture",
+                "first_name": "evan",
+                "last_name": "jones",
+                "email": "evan@revature.net"
+            }
+ 
+
+## History [/history]
+
+### Post History [POST]
+
+View a user's Post History
+
++ Request (application/json)
+
+        {
+            "user_id": "1"
+        }
+
++ Response 200 (application/json)
+
+            {
+                "history": [
+                    {  
+                        "toy_id": "toy1",
+                        "image": "image",
+                        "description": "action figure",
+                        "quality": "good"
+                    }, {
+                        "toy_id": "toy2",
+                        "image": "image",
+                        "description": "fire truck",
+                        "quality": "okay"
+                    }, {
+                        "toy_id": "toy3",
+                        "image": "image",
+                        "description": "Barbie",
+                        "quality": "poor"
+                    }
+                ]
+            }
+
+
+## Reviews [/reviews]
+
+### User Reviews [POST]
+
+View a user's Reviews
+
++ Request (application/json)
+
+        {
+            "user_id": "1"
+        }
+
++ Response 200 (application/json)
+
+            {
+                "reviews": [
+                    {
+                        "review_id": "1",
+                        "from": "john doe",
+                        "message": "good",
+                        "rating": "5/5"
+                    }, {
+                        "review_id": "2",
+                        "from": "jane doe",
+                        "message": "very nice",
+                        "rating": "4/5"
+                    }, {
+                        "review_id": "3",
+                        "from": "john smith",
+                        "message": "could be better",
+                        "rating": "2/5"
+                ]
+            }
