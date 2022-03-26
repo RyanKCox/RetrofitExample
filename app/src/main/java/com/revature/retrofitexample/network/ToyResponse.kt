@@ -2,9 +2,9 @@ package com.revature.retrofitexample.network
 
 import com.google.gson.annotations.SerializedName
 
-data class ToyList (
+data class ToyResponse (
 
     @SerializedName("toys")
-    var results:List<Toy>
+    var results:ArrayList<Toy>
 
         )
