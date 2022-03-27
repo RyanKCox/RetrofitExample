@@ -78,13 +78,29 @@ retrieve all posted items from the user
 
             {
                 "toys":
+                [
                     {
                         "toyid":0,
                         "name":"Nerf Gun",
                         "description":"Toy gun that shoots foam darts",
-                        "img":"nerfgun.jpg",
+                        "img":"https://m.media-amazon.com/images/I/71XMAnHAn3L._CR207,0,1222,1222_UX256.jpg",
+                        "posterid":0
+                        },
+                    {
+                        "toyid":1,
+                        "name":"Bat",
+                        "description":"Steel baseball bat",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCtPToQBofqd_2yPj_9U2o69MM92XOmAvusg&usqp=CAU",
+                        "posterid":0
+                    },
+                    {
+                        "toyid":3,
+                        "name":"Frisbie",
+                        "description":"Yellow plastic frisbie",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQcXXfqhya5L6uFa6Xsx78LRlPQFfTUIe2Q&usqp=CAU",
                         "posterid":0
                     }
+                ]
             }
             
 ## ViewToy [/viewtoy]
@@ -121,7 +137,7 @@ Retrieves a toy by the passed in toy id
 
 authenticate user login
 
-### retrieve login authintication [GET]
+### retrieve login authintication [POST]
 
 Retrieves a toy by the passed in toy id
 
