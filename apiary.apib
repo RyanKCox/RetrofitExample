@@ -32,7 +32,7 @@ retrieve the toys from the server
                         "description":"Toy gun that shoots foam darts",
                         "img":"https://m.media-amazon.com/images/I/71XMAnHAn3L._CR207,0,1222,1222_UX256.jpg",
                         "posterid":0
-                        },
+                    },
                     {
                         "toyid":1,
                         "name":"Bat",
@@ -52,6 +52,34 @@ retrieve the toys from the server
                         "name":"Frisbie",
                         "description":"Yellow plastic frisbie",
                         "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQcXXfqhya5L6uFa6Xsx78LRlPQFfTUIe2Q&usqp=CAU",
+                        "posterid":3
+                    },
+                    {
+                        "toyid":4,
+                        "name":"Baby Scooter",
+                        "description":"Baby scooter with a dog face",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJP_KD4Lb_z0EHND7nE1C330xR2vj1YoEHGg&usqp=CAU",
+                        "posterid":0
+                    },
+                    {
+                        "toyid":5,
+                        "name":"Dino",
+                        "description":"Toy T-Rex",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSehS7cmT9GqTHJo58RYByoq35UL5m995i0Gg&usqp=CAU",
+                        "posterid":1
+                    },
+                    {
+                        "toyid":6,
+                        "name":"Dinosuar Plushies",
+                        "description":"Set of 4 dinosaur stuffed animals",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-O2cpl2kSiBF6IoqcIDDsbAIU-XvHMgPb_Q&usqp=CAU",
+                        "posterid":2
+                    },
+                    {
+                        "toyid":7,
+                        "name":"Pokemon figure",
+                        "description":"Small bulbasuar toy",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROMAVD63Jup6dipZfjN0eCpzn493ZcA0D0zA&usqp=CAU",
                         "posterid":3
                     }
                 ]
@@ -85,24 +113,109 @@ retrieve all posted items from the user
                         "description":"Toy gun that shoots foam darts",
                         "img":"https://m.media-amazon.com/images/I/71XMAnHAn3L._CR207,0,1222,1222_UX256.jpg",
                         "posterid":0
-                        },
-                    {
-                        "toyid":1,
-                        "name":"Bat",
-                        "description":"Steel baseball bat",
-                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCtPToQBofqd_2yPj_9U2o69MM92XOmAvusg&usqp=CAU",
-                        "posterid":0
                     },
                     {
-                        "toyid":3,
-                        "name":"Frisbie",
-                        "description":"Yellow plastic frisbie",
-                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQcXXfqhya5L6uFa6Xsx78LRlPQFfTUIe2Q&usqp=CAU",
+                        "toyid":4,
+                        "name":"Baby Scooter",
+                        "description":"Baby scooter with a dog face",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJP_KD4Lb_z0EHND7nE1C330xR2vj1YoEHGg&usqp=CAU",
                         "posterid":0
                     }
                 ]
             }
             
++ Request (application/json)
+
+            {
+                "posterid":1
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "toys":
+                [
+                    {
+                        "toyid":1,
+                        "name":"Bat",
+                        "description":"Steel baseball bat",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCtPToQBofqd_2yPj_9U2o69MM92XOmAvusg&usqp=CAU",
+                        "posterid":1
+                    },
+                    {
+                        "toyid":5,
+                        "name":"Dino",
+                        "description":"Toy T-Rex",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSehS7cmT9GqTHJo58RYByoq35UL5m995i0Gg&usqp=CAU",
+                        "posterid":1
+                    }
+                ]
+            }
+                        
++ Request (application/json)
+
+            {
+                "posterid":2
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "toys":
+                [
+                    {
+                        "toyid":2,
+                        "name":"Barbie",
+                        "description":"Malibu Barbie doll",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-UnT64cyIy0KIK3FUKUfdIdK-Pw6MqQ4QQ&usqp=CAU",
+                        "posterid":2
+                    },
+                    {
+                        "toyid":6,
+                        "name":"Dinosuar Plushies",
+                        "description":"Set of 4 dinosaur stuffed animals",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-O2cpl2kSiBF6IoqcIDDsbAIU-XvHMgPb_Q&usqp=CAU",
+                        "posterid":2
+                    }
+                ]
+            }
+                        
++ Request (application/json)
+
+            {
+                "posterid":3
+            }
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "toys":
+                [
+                    {
+                        "toyid":3,
+                        "name":"Frisbie",
+                        "description":"Yellow plastic frisbie",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQcXXfqhya5L6uFa6Xsx78LRlPQFfTUIe2Q&usqp=CAU",
+                        "posterid":3
+                    },
+                    {
+                        "toyid":7,
+                        "name":"Pokemon figure",
+                        "description":"Small bulbasuar toy",
+                        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROMAVD63Jup6dipZfjN0eCpzn493ZcA0D0zA&usqp=CAU",
+                        "posterid":3
+                    }dd 
+                ]
+            }
 ## ViewToy [/viewtoy]
 
 API that grabs a single toy
